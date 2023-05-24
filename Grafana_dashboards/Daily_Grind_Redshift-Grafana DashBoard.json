@@ -1,0 +1,650 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 10,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 12,
+      "panels": [],
+      "title": "Daily Grind Company",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-BlYlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT \r\n  COUNT(branch_id)\r\nFROM\r\n  branch",
+          "refId": "A"
+        }
+      ],
+      "title": "Number of Branches",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyGBP"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT \r\n  SUM(total_price)\r\nFROM\r\n  transaction ",
+          "refId": "A"
+        }
+      ],
+      "title": "Total Revenue",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#7d52cc",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT\r\n  COUNT(transaction_id)\r\nFROM\r\n  transaction",
+          "refId": "A"
+        }
+      ],
+      "title": "Total No. of Transactions",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "light-orange",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT\r\n  COUNT(transaction_id) as CASH\r\nFROM\r\n  transaction\r\nWHERE payment_method = 'CASH'\r\n",
+          "refId": "A"
+        }
+      ],
+      "title": "No. of CASH transactions",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 7,
+        "x": 16,
+        "y": 1
+      },
+      "id": 5,
+      "options": {
+        "displayLabels": [
+          "percent"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true,
+          "values": []
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT \r\n  b.branch_location,\r\n  SUM(o.product_qty) as sold_products\r\nFROM\r\n  branch b\r\nJOIN transaction t ON t.branch_id = b.branch_id\r\nJOIN orders o ON t.transaction_id = o.transaction_id \r\nGROUP BY b.branch_location\r\nORDER BY sold_products DESC LIMIT 10",
+          "refId": "A"
+        }
+      ],
+      "title": "TOP 10 BRANCHES by sold products",
+      "transparent": true,
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "light-orange",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 12,
+        "y": 4
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT\r\n  COUNT(transaction_id) as CARD\r\nFROM\r\n  transaction\r\nWHERE payment_method = 'CARD'\r\n",
+          "refId": "A"
+        }
+      ],
+      "title": "No. of CARD transactions",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyGBP"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 7
+      },
+      "id": 2,
+      "options": {
+        "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "values": true
+        },
+        "showUnfilled": true,
+        "text": {},
+        "valueMode": "color"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT \r\n  b.branch_location,\r\n  SUM(t.total_price) as total_sales\r\nFROM\r\n  branch b\r\nJOIN transaction t ON t.branch_id = b.branch_id\r\nGROUP BY b.branch_location\r\nORDER BY total_sales DESC LIMIT 10",
+          "refId": "A"
+        }
+      ],
+      "title": "TOP 10 BRANCHES by revenue",
+      "transparent": true,
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 7,
+        "x": 8,
+        "y": 7
+      },
+      "id": 3,
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "values": true
+        },
+        "showUnfilled": true,
+        "valueMode": "color"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT \r\n  p.product_name,\r\n  SUM(o.product_qty) as sold_products\r\nFROM\r\n  product p\r\nJOIN orders o ON o.product_id = p.product_id \r\nGROUP BY p.product_name\r\nORDER BY sold_products DESC LIMIT 10",
+          "refId": "A"
+        }
+      ],
+      "title": "TOP 10 PRODUCTS by sold quantity",
+      "transparent": true,
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "grafana-redshift-datasource",
+        "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 10,
+        "x": 0,
+        "y": 14
+      },
+      "id": 11,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-redshift-datasource",
+            "uid": "dbd88f95-3689-4a6f-82a5-3f8e63bbd0bf"
+          },
+          "rawSQL": "SELECT\r\n    b.branch_location,\r\n    t.payment_method,\r\n    COUNT(*) AS Total_transactions\r\nFROM\r\n    transaction t\r\nJOIN\r\n    branch b ON t.branch_id = b.branch_id\r\nGROUP BY\r\n    b.branch_location,\r\n    t.payment_method\r\nORDER BY\r\n    Total_transactions DESC",
+          "refId": "A"
+        }
+      ],
+      "title": "Total type of transactions per location",
+      "transformations": [
+        {
+          "id": "joinByField",
+          "options": {
+            "byField": "branch_location",
+            "mode": "outer"
+          }
+        },
+        {
+          "id": "joinByField",
+          "options": {
+            "byField": "payment_method",
+            "mode": "outer"
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Daily_Grind_Redshift",
+  "uid": "e27323f3-f062-477c-a8ae-a82d0f177900",
+  "version": 18,
+  "weekStart": ""
+}
