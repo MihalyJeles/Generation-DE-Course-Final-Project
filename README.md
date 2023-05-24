@@ -60,8 +60,7 @@ Extracted data that we don't need.
 Each branch won’t have the transformed data, only management team etc. of the client.
 
 # The approach
-![Daily Grind 1](https://user-images.githubusercontent.com/127961119/231802098-93dc852a-dcda-4a7b-9156-9619b74946ad.png)
-
+![image](https://github.com/generation-de-lon9/daily-grind-final-project/assets/127960942/c406e085-e441-47fa-b1b5-a207a4ccc6ba)
 # SMART goal
 Organise our team to work cohesively together and building upon our strengths and helping each other in are weaknesses.
 
@@ -276,3 +275,21 @@ sudo docker run -d -p 80:3000 grafana/grafana
 - Replace (https to http://) on the web adress.
 
 - Log in with the user and password..
+
+# Visualisation
+## Cloud Watch
+### EC2
+![EC2 CPUUtilization](https://github.com/generation-de-lon9/daily-grind-final-project/assets/127960942/79227265-fbd3-44ce-8b1d-0615cb00a688)
+### Lambdas
+![Invocations   Duration of Lambdas](https://github.com/generation-de-lon9/daily-grind-final-project/assets/127960942/061573e2-d383-43dd-8e46-c16c53ae0055)
+![Errors on Lambdas](https://github.com/generation-de-lon9/daily-grind-final-project/assets/127960942/1cdb4297-918e-4886-abed-a0181b481845)
+### SQS
+![SQS](https://github.com/generation-de-lon9/daily-grind-final-project/assets/127960942/d3e62203-22b9-47ee-8117-9fa9f07df3fe)
+
+## Redshift
+![Redshift](https://github.com/generation-de-lon9/daily-grind-final-project/assets/127960942/35f03d1e-c520-4162-9936-8bb251e94ac9)
+### Payment Method
+![Redshift payment method](https://github.com/generation-de-lon9/daily-grind-final-project/assets/127960942/e9f56e37-2471-448c-b741-ba3b78716a43)
+
+# Arquitecture of the solution
+![Arquitechture](https://github.com/generation-de-lon9/daily-grind-final-project/assets/127960942/3e96afd6-7b87-41ab-8dbe-7928ee567b74)
