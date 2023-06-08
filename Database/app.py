@@ -25,7 +25,7 @@ def clean_sensitive_data(raw_sales_d):
         del data['card_number']
     return raw_sales_d
 
-#-------------------------------- Transaction(table) functions ------------------------------------------------------------------------------------
+#-------------------------------- Transaction(table) functions -------------------------------------------------------------------------------------
 
 # SPLIT date and time into different columns function
 def split_date_time(cleaned_sales_d):
